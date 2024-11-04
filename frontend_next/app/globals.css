@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.tabs {
+  @apply px-4 py-2 font-semibold text-gray-600 cursor-pointer border-b-2 transition-colors duration-300;
+}
+
+.active-tab {
+  @apply text-blue-500 border-blue-500;
+}
+
+.content {
+  @apply flex flex-row items-center p-4;
+}
+
+.active-content {
+  @apply block;
+}

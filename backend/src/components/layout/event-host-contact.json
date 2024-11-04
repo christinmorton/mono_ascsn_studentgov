@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_event_host_contacts",
+  "info": {
+    "displayName": "EventHostContact",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
+      "required": true
+    },
+    "OnSiteHostPhone": {
+      "type": "string",
+      "required": true
+    },
+    "OnSiteHostEmail": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

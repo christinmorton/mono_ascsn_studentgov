@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_club_organizers",
+  "info": {
+    "displayName": "ClubOrganizer",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "ActiveSemester": {
+      "type": "string"
+    }
+  }
+}

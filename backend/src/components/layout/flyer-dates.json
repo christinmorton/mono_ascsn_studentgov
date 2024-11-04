@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_layout_flyer_dates",
+  "info": {
+    "displayName": "FlyerDates",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "StartDate": {
+      "type": "date"
+    },
+    "StartTime": {
+      "type": "time"
+    },
+    "EndDate": {
+      "type": "date"
+    },
+    "EndTime": {
+      "type": "time"
+    },
+    "Event": {
+      "type": "enumeration",
+      "enum": [
+        "Day-1",
+        "Day-3",
+        "Week",
+        "Weekend",
+        "Seminar",
+        "Convention",
+        "CSN Event"
+      ]
+    },
+    "ConfirmedEvent": {
+      "type": "boolean",
+      "required": true
+    },
+    "ActiveNow": {
+      "type": "boolean",
+      "default": false
+    },
+    "Postoned": {
+      "type": "boolean",
+      "default": false
+    },
+    "Cancelled": {
+      "type": "boolean",
+      "default": false
+    },
+    "Completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "EventStatus": {
+      "type": "string"
+    }
+  }
+}

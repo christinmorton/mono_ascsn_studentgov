@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_layout_child_sections",
+  "info": {
+    "displayName": "ChildSection",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "PlainTextDescription": {
+      "type": "text",
+      "required": true
+    },
+    "PrettyDescription": {
+      "type": "blocks"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Link": {
+      "type": "string"
+    },
+    "ChildLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.link"
+    }
+  }
+}

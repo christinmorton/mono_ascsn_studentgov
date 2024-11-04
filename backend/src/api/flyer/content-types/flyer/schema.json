@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flyers",
+  "info": {
+    "singularName": "flyer",
+    "pluralName": "flyers",
+    "displayName": "Flyer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "EventOrganizer": {
+      "type": "string",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "FlyerDates": {
+      "displayName": "FlyerDates",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.flyer-dates"
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

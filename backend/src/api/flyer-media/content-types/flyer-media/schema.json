@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "flyer_medias",
+  "info": {
+    "singularName": "flyer-media",
+    "pluralName": "flyer-medias",
+    "displayName": "FlyerMedia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "default": "Flyers approved by CSN (College of Southern Nevada)"
+    }
+  }
+}

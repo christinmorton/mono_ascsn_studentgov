@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_layout_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PrimaryStreet": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "suite": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Building": {
+      "type": "string"
+    },
+    "Office": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "SecondaryStreet": {
+      "type": "string",
+      "unique": true
+    },
+    "PostOfficeBox": {
+      "type": "string",
+      "unique": true
+    },
+    "Phone": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_guiddances",
+  "info": {
+    "displayName": "guidance",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ascsn_content": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::marketing-article.marketing-article"
+    }
+  }
+}

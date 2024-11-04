@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "survey_questions",
+  "info": {
+    "singularName": "survey-question",
+    "pluralName": "survey-questions",
+    "displayName": "SurveyQuestion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Question": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    },
+    "Active": {
+      "type": "boolean",
+      "default": false
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Boolean",
+        "MultipleChoice",
+        "ShortAnswer",
+        "LongAnswer",
+        "Feedback"
+      ],
+      "required": true
+    },
+    "student_responses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student-response.student-response"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Question"
+    }
+  }
+}

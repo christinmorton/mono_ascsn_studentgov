@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_responses",
+  "info": {
+    "singularName": "student-response",
+    "pluralName": "student-responses",
+    "displayName": "StudentResponse",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "ShortAnswer": {
+      "type": "string"
+    },
+    "LongAnswer": {
+      "type": "text"
+    },
+    "OpenDate": {
+      "type": "datetime"
+    },
+    "Bool": {
+      "type": "boolean"
+    },
+    "Feedback": {
+      "type": "text"
+    },
+    "BoolText": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "survey_question": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::survey-question.survey-question"
+    }
+  }
+}

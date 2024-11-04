@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_newsletter_forms",
+  "info": {
+    "displayName": "NewsletterForm",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "Subtext": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

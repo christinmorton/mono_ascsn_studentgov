@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_survey_questions",
+  "info": {
+    "displayName": "SurveyQuestion",
+    "icon": "rotate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "text",
+      "required": true
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Boolean",
+        "MultipleChoice",
+        "ShortAnswer",
+        "LongAnswer",
+        "Feedback"
+      ]
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

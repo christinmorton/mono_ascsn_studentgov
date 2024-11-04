@@ -1,0 +1,8 @@
+
+resources/*
+# resources/csn_assets/
+# resources/ASCSN_Logo_Remake.svg
+# resources/ASCSN_Logo_Study.afdesign
+# resources/ASCSN_Logo_Study.afdesign~lock~
+
+/frontend_vanilla*

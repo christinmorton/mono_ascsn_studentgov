@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_mission_statements",
+  "info": {
+    "displayName": "MissionStatement",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "Subtext": {
+      "type": "text",
+      "required": true
+    },
+    "ShowLogo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_layout_club_events",
+  "info": {
+    "displayName": "ClubEvent",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "Start": {
+      "type": "time",
+      "required": true
+    },
+    "End": {
+      "type": "time"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

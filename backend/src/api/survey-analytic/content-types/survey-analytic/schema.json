@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "survey_analytics",
+  "info": {
+    "singularName": "survey-analytic",
+    "pluralName": "survey-analytics",
+    "displayName": "SurveyAnalytic"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student_survey": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student-survey.student-survey"
+    },
+    "students_attempted": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student"
+    },
+    "students_completed": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student"
+    },
+    "Views": {
+      "type": "integer"
+    }
+  }
+}

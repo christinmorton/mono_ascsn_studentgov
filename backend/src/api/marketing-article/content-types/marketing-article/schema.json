@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marketing_articles",
+  "info": {
+    "singularName": "marketing-article",
+    "pluralName": "marketing-articles",
+    "displayName": "ASCSNContent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "MarketingLead": {
+      "type": "text",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "files"
+      ]
+    },
+    "ChildSection": {
+      "displayName": "ChildSection",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.child-section"
+    },
+    "CallToActionLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.link"
+    }
+  }
+}

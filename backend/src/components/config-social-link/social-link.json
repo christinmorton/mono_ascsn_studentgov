@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_config_social_link_social_links",
+  "info": {
+    "displayName": "Social Link",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "SocialMedia": {
+      "type": "enumeration",
+      "enum": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook",
+        "TikTok"
+      ]
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_company_secondary_contacts",
+  "info": {
+    "displayName": "SecondaryContact",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone": {
+      "type": "string"
+    }
+  }
+}

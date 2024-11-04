@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DepartmentTitle": {
+      "type": "string",
+      "default": "ASCSN",
+      "required": true,
+      "unique": true
+    },
+    "HeroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Student Government & Leadership Development"
+    },
+    "PageTitle": {
+      "type": "string",
+      "default": "Home",
+      "required": true,
+      "unique": true
+    },
+    "hero": {
+      "displayName": "Hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Support": {
+      "displayName": "Support",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.support"
+    },
+    "Resources": {
+      "displayName": "Resources",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.resources"
+    },
+    "Guiddance": {
+      "displayName": "Guiddance",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.guiddance"
+    },
+    "dynamicHomeSection": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.newsletter-form",
+        "layout.mission-statement"
+      ]
+    }
+  }
+}

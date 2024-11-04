@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "qrs",
+  "info": {
+    "singularName": "qr",
+    "pluralName": "qrs",
+    "displayName": "QR"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "QRLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

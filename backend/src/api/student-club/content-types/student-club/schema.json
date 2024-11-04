@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_clubs",
+  "info": {
+    "singularName": "student-club",
+    "pluralName": "student-clubs",
+    "displayName": "StudentClub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Featured": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "PrettyDescription": {
+      "type": "blocks"
+    },
+    "PlainTextDescription": {
+      "type": "string"
+    },
+    "ClubEvent": {
+      "displayName": "ClubEvent",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.club-event"
+    },
+    "ClubOrganizer": {
+      "displayName": "ClubOrganizer",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.club-organizer"
+    }
+  }
+}

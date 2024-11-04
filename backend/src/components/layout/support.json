@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_supports",
+  "info": {
+    "displayName": "Support",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ascsn_content": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::marketing-article.marketing-article"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_headers",
+  "info": {
+    "singularName": "site-header",
+    "pluralName": "site-headers",
+    "displayName": "SiteHeader",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": false
+    },
+    "ShowLogo": {
+      "type": "boolean",
+      "default": true
+    },
+    "header_top_menu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::menu.menu"
+    },
+    "SocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config-social-link.social-link"
+    },
+    "ShowAuth": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "header_bottom_menu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::menu.menu"
+    }
+  }
+}

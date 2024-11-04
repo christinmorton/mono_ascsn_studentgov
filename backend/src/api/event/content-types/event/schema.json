@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "Link": {
+      "type": "string"
+    },
+    "EventHost": {
+      "type": "string",
+      "required": true
+    },
+    "EventDates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.flyer-dates"
+    },
+    "EventHostContact": {
+      "displayName": "EventHostContact",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.event-host-contact"
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

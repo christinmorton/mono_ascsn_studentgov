@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_layout_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "emotionUnhappy"
+  },
+  "options": {},
+  "attributes": {
+    "CallToAction": {
+      "type": "string",
+      "required": true
+    },
+    "HeroImage": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Buttons": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.link"
+    }
+  }
+}
