@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "advertisers",
+  "info": {
+    "singularName": "advertiser",
+    "pluralName": "advertisers",
+    "displayName": "Advertiser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shortcut_to_company": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "contact_email": {
+      "type": "email",
+      "required": true
+    },
+    "PlainTextDescription": {
+      "type": "text"
+    },
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "flyers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::flyer.flyer"
+    }
+  }
+}

@@ -1,77 +1,225 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface LayoutSurveyQuestion extends Struct.ComponentSchema {
-  collectionName: 'components_layout_survey_questions';
+export interface CompanyPrimaryContact extends Struct.ComponentSchema {
+  collectionName: 'components_company_primary_contacts';
   info: {
-    displayName: 'SurveyQuestion';
-    icon: 'rotate';
-    description: '';
+    displayName: 'PrimaryContact';
+    icon: 'cup';
   };
   attributes: {
-    Question: Schema.Attribute.Text & Schema.Attribute.Required;
-    Type: Schema.Attribute.Enumeration<
-      ['Boolean', 'MultipleChoice', 'ShortAnswer', 'LongAnswer', 'Feedback']
+    Email: Schema.Attribute.Email & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    Phone: Schema.Attribute.String;
+  };
+}
+
+export interface CompanySecondaryContact extends Struct.ComponentSchema {
+  collectionName: 'components_company_secondary_contacts';
+  info: {
+    displayName: 'SecondaryContact';
+    icon: 'command';
+  };
+  attributes: {
+    Email: Schema.Attribute.Email & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    Phone: Schema.Attribute.String;
+  };
+}
+
+export interface ConfigSocialLinkSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_config_social_link_social_links';
+  info: {
+    displayName: 'Social Link';
+    icon: 'clock';
+  };
+  attributes: {
+    Link: Schema.Attribute.String & Schema.Attribute.Required;
+    SocialMedia: Schema.Attribute.Enumeration<
+      ['LinkedIn', 'Twitter', 'Facebook', 'TikTok']
     >;
-    Active: Schema.Attribute.Boolean &
+  };
+}
+
+export interface DataAssignedSurveyQuestionIds extends Struct.ComponentSchema {
+  collectionName: 'components_data_assigned_survey_question_ids';
+  info: {
+    displayName: 'assigned_survey_question_ids';
+    icon: 'apps';
+  };
+  attributes: {
+    question_id: Schema.Attribute.String;
+    question_slug: Schema.Attribute.String;
+  };
+}
+
+export interface DataQuestionIdList extends Struct.ComponentSchema {
+  collectionName: 'components_data_question_id_lists';
+  info: {
+    displayName: 'question_id_list';
+  };
+  attributes: {
+    question_id: Schema.Attribute.String & Schema.Attribute.Required;
+    question_slug: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
+      Schema.Attribute.Unique;
   };
 }
 
-export interface LayoutSupport extends Struct.ComponentSchema {
-  collectionName: 'components_layout_supports';
+export interface DataUpdatedByUser extends Struct.ComponentSchema {
+  collectionName: 'components_data_updated_by_users';
   info: {
-    displayName: 'Support';
-    icon: 'cloud';
-    description: '';
+    displayName: 'updated_by_user';
+    icon: 'bell';
   };
   attributes: {
-    ascsn_content: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::marketing-article.marketing-article'
-    >;
+    user_id: Schema.Attribute.String;
   };
 }
 
-export interface LayoutResources extends Struct.ComponentSchema {
-  collectionName: 'components_layout_resources';
+export interface LayoutAddress extends Struct.ComponentSchema {
+  collectionName: 'components_layout_addresses';
   info: {
-    displayName: 'Resources';
-    icon: 'cog';
     description: '';
+    displayName: 'address';
+    icon: 'apps';
   };
   attributes: {
-    ascsn_content: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::marketing-article.marketing-article'
-    >;
+    Building: Schema.Attribute.String;
+    city: Schema.Attribute.String & Schema.Attribute.Required;
+    Office: Schema.Attribute.String;
+    Phone: Schema.Attribute.String & Schema.Attribute.Required;
+    PostOfficeBox: Schema.Attribute.String & Schema.Attribute.Unique;
+    PrimaryStreet: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    SecondaryStreet: Schema.Attribute.String & Schema.Attribute.Unique;
+    state: Schema.Attribute.String & Schema.Attribute.Required;
+    suite: Schema.Attribute.String;
+    zipcode: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface LayoutNewsletterForm extends Struct.ComponentSchema {
-  collectionName: 'components_layout_newsletter_forms';
+export interface LayoutChildSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_child_sections';
   info: {
-    displayName: 'NewsletterForm';
+    displayName: 'ChildSection';
+    icon: 'dashboard';
+  };
+  attributes: {
+    ChildLink: Schema.Attribute.Component<'layout.link', false>;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    Image: Schema.Attribute.Media<'images' | 'videos', true>;
+    Link: Schema.Attribute.String;
+    PlainTextDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    PrettyDescription: Schema.Attribute.Blocks;
+  };
+}
+
+export interface LayoutClubEvent extends Struct.ComponentSchema {
+  collectionName: 'components_layout_club_events';
+  info: {
+    displayName: 'ClubEvent';
     icon: 'crown';
   };
   attributes: {
-    Heading: Schema.Attribute.String & Schema.Attribute.Required;
-    Subtext: Schema.Attribute.Text & Schema.Attribute.Required;
+    Date: Schema.Attribute.Date & Schema.Attribute.Required;
+    Description: Schema.Attribute.Text;
+    End: Schema.Attribute.Time;
+    Image: Schema.Attribute.Media<'images'>;
+    Start: Schema.Attribute.Time & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface LayoutMissionStatement extends Struct.ComponentSchema {
-  collectionName: 'components_layout_mission_statements';
+export interface LayoutClubOrganizer extends Struct.ComponentSchema {
+  collectionName: 'components_layout_club_organizers';
   info: {
-    displayName: 'MissionStatement';
+    description: '';
+    displayName: 'ClubOrganizer';
+    icon: 'alien';
+  };
+  attributes: {
+    ActiveSemester: Schema.Attribute.String;
+    Email: Schema.Attribute.Email & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    user_id: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutEventHostContact extends Struct.ComponentSchema {
+  collectionName: 'components_layout_event_host_contacts';
+  info: {
+    displayName: 'EventHostContact';
     icon: 'archive';
   };
   attributes: {
-    Heading: Schema.Attribute.String & Schema.Attribute.Required;
-    Subtext: Schema.Attribute.Text & Schema.Attribute.Required;
-    ShowLogo: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
+    Email: Schema.Attribute.Email & Schema.Attribute.Required;
+    OnSiteHostEmail: Schema.Attribute.Email & Schema.Attribute.Required;
+    OnSiteHostPhone: Schema.Attribute.String & Schema.Attribute.Required;
+    Phone: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LayoutFlyerDates extends Struct.ComponentSchema {
+  collectionName: 'components_layout_flyer_dates';
+  info: {
+    description: '';
+    displayName: 'FlyerDates';
+    icon: 'bulletList';
+  };
+  attributes: {
+    ActiveNow: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    Cancelled: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    Completed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    ConfirmedEvent: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    Discount: Schema.Attribute.String;
+    EndDate: Schema.Attribute.Date;
+    EndTime: Schema.Attribute.Time;
+    Event: Schema.Attribute.Enumeration<
+      [
+        'Day-1',
+        'Day-3',
+        'Week',
+        'Weekend',
+        'Seminar',
+        'Convention',
+        'CSN Event',
+      ]
+    >;
+    EventStatus: Schema.Attribute.String;
+    Postoned: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    SpecialDescription: Schema.Attribute.Text;
+    SpecialOffer: Schema.Attribute.String;
+    StartDate: Schema.Attribute.Date;
+    StartTime: Schema.Attribute.Time;
+  };
+}
+
+export interface LayoutGuiddance extends Struct.ComponentSchema {
+  collectionName: 'components_layout_guiddances';
+  info: {
+    description: '';
+    displayName: 'guidance';
+    icon: 'book';
+  };
+  attributes: {
+    ascsn_content: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::marketing-article.marketing-article'
+    >;
+  };
+}
+
+export interface LayoutHero extends Struct.ComponentSchema {
+  collectionName: 'components_layout_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'emotionUnhappy';
+  };
+  attributes: {
+    Buttons: Schema.Attribute.Component<'layout.link', true>;
+    CallToAction: Schema.Attribute.String & Schema.Attribute.Required;
+    HeroImage: Schema.Attribute.Media<'images' | 'videos', true>;
   };
 }
 
@@ -87,25 +235,39 @@ export interface LayoutLink extends Struct.ComponentSchema {
   };
 }
 
-export interface LayoutHero extends Struct.ComponentSchema {
-  collectionName: 'components_layout_heroes';
+export interface LayoutMissionStatement extends Struct.ComponentSchema {
+  collectionName: 'components_layout_mission_statements';
   info: {
-    displayName: 'Hero';
-    icon: 'emotionUnhappy';
+    displayName: 'MissionStatement';
+    icon: 'archive';
   };
   attributes: {
-    CallToAction: Schema.Attribute.String & Schema.Attribute.Required;
-    HeroImage: Schema.Attribute.Media<'images' | 'videos', true>;
-    Buttons: Schema.Attribute.Component<'layout.link', true>;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    ShowLogo: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    Subtext: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
-export interface LayoutGuiddance extends Struct.ComponentSchema {
-  collectionName: 'components_layout_guiddances';
+export interface LayoutNewsletterForm extends Struct.ComponentSchema {
+  collectionName: 'components_layout_newsletter_forms';
   info: {
-    displayName: 'guidance';
-    icon: 'book';
+    displayName: 'NewsletterForm';
+    icon: 'crown';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    Subtext: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface LayoutResources extends Struct.ComponentSchema {
+  collectionName: 'components_layout_resources';
+  info: {
     description: '';
+    displayName: 'Resources';
+    icon: 'cog';
   };
   attributes: {
     ascsn_content: Schema.Attribute.Relation<
@@ -115,180 +277,111 @@ export interface LayoutGuiddance extends Struct.ComponentSchema {
   };
 }
 
-export interface LayoutFlyerDates extends Struct.ComponentSchema {
-  collectionName: 'components_layout_flyer_dates';
+export interface LayoutSecondaryContent extends Struct.ComponentSchema {
+  collectionName: 'components_layout_secondary_contents';
   info: {
-    displayName: 'FlyerDates';
-    icon: 'bulletList';
-    description: '';
+    displayName: 'secondary_content';
+    icon: 'cast';
   };
   attributes: {
-    StartDate: Schema.Attribute.Date;
-    StartTime: Schema.Attribute.Time;
-    EndDate: Schema.Attribute.Date;
-    EndTime: Schema.Attribute.Time;
-    Event: Schema.Attribute.Enumeration<
-      [
-        'Day-1',
-        'Day-3',
-        'Week',
-        'Weekend',
-        'Seminar',
-        'Convention',
-        'CSN Event',
-      ]
+    ascsn_content: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::marketing-article.marketing-article'
     >;
-    ConfirmedEvent: Schema.Attribute.Boolean & Schema.Attribute.Required;
-    ActiveNow: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    Postoned: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    Cancelled: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    Completed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    EventStatus: Schema.Attribute.String;
+    CallToAction: Schema.Attribute.String;
+    Description: Schema.Attribute.String;
+    SectionTitle: Schema.Attribute.String;
   };
 }
 
-export interface LayoutEventHostContact extends Struct.ComponentSchema {
-  collectionName: 'components_layout_event_host_contacts';
+export interface LayoutStudentAnswer extends Struct.ComponentSchema {
+  collectionName: 'components_layout_student_answers';
   info: {
-    displayName: 'EventHostContact';
-    icon: 'archive';
-  };
-  attributes: {
-    Email: Schema.Attribute.Email & Schema.Attribute.Required;
-    Phone: Schema.Attribute.String & Schema.Attribute.Required;
-    OnSiteHostPhone: Schema.Attribute.String & Schema.Attribute.Required;
-    OnSiteHostEmail: Schema.Attribute.Email & Schema.Attribute.Required;
-  };
-}
-
-export interface LayoutClubOrganizer extends Struct.ComponentSchema {
-  collectionName: 'components_layout_club_organizers';
-  info: {
-    displayName: 'ClubOrganizer';
-    icon: 'alien';
-  };
-  attributes: {
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-    Email: Schema.Attribute.Email & Schema.Attribute.Required;
-    ActiveSemester: Schema.Attribute.String;
-  };
-}
-
-export interface LayoutClubEvent extends Struct.ComponentSchema {
-  collectionName: 'components_layout_club_events';
-  info: {
-    displayName: 'ClubEvent';
-    icon: 'crown';
-  };
-  attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Date: Schema.Attribute.Date & Schema.Attribute.Required;
-    Start: Schema.Attribute.Time & Schema.Attribute.Required;
-    End: Schema.Attribute.Time;
-    Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface LayoutChildSection extends Struct.ComponentSchema {
-  collectionName: 'components_layout_child_sections';
-  info: {
-    displayName: 'ChildSection';
-    icon: 'dashboard';
-  };
-  attributes: {
-    Heading: Schema.Attribute.String & Schema.Attribute.Required;
-    PlainTextDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    PrettyDescription: Schema.Attribute.Blocks;
-    Image: Schema.Attribute.Media<'images' | 'videos', true>;
-    Link: Schema.Attribute.String;
-    ChildLink: Schema.Attribute.Component<'layout.link', false>;
-  };
-}
-
-export interface LayoutAddress extends Struct.ComponentSchema {
-  collectionName: 'components_layout_addresses';
-  info: {
-    displayName: 'address';
-    icon: 'apps';
     description: '';
+    displayName: 'StudentAnswer';
+    icon: 'check';
   };
   attributes: {
-    PrimaryStreet: Schema.Attribute.String &
+    answered_question_id: Schema.Attribute.String;
+    plain_text_answer: Schema.Attribute.Text;
+    resources: Schema.Attribute.Media<'images' | 'videos' | 'audios', true>;
+    rich_text_answer: Schema.Attribute.Blocks;
+  };
+}
+
+export interface LayoutSupport extends Struct.ComponentSchema {
+  collectionName: 'components_layout_supports';
+  info: {
+    description: '';
+    displayName: 'Support';
+    icon: 'cloud';
+  };
+  attributes: {
+    ascsn_content: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::marketing-article.marketing-article'
+    >;
+  };
+}
+
+export interface LayoutSurveyQuestion extends Struct.ComponentSchema {
+  collectionName: 'components_layout_survey_questions';
+  info: {
+    description: '';
+    displayName: 'SurveyQuestion';
+    icon: 'rotate';
+  };
+  attributes: {
+    Active: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    suite: Schema.Attribute.String;
-    zipcode: Schema.Attribute.String & Schema.Attribute.Required;
-    Building: Schema.Attribute.String;
-    Office: Schema.Attribute.String;
-    city: Schema.Attribute.String & Schema.Attribute.Required;
-    state: Schema.Attribute.String & Schema.Attribute.Required;
-    SecondaryStreet: Schema.Attribute.String & Schema.Attribute.Unique;
-    PostOfficeBox: Schema.Attribute.String & Schema.Attribute.Unique;
-    Phone: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ConfigSocialLinkSocialLink extends Struct.ComponentSchema {
-  collectionName: 'components_config_social_link_social_links';
-  info: {
-    displayName: 'Social Link';
-    icon: 'clock';
-  };
-  attributes: {
-    SocialMedia: Schema.Attribute.Enumeration<
-      ['LinkedIn', 'Twitter', 'Facebook', 'TikTok']
+      Schema.Attribute.DefaultTo<true>;
+    Question: Schema.Attribute.Text & Schema.Attribute.Required;
+    Type: Schema.Attribute.Enumeration<
+      ['Boolean', 'MultipleChoice', 'ShortAnswer', 'LongAnswer', 'Feedback']
     >;
-    Link: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface CompanySecondaryContact extends Struct.ComponentSchema {
-  collectionName: 'components_company_secondary_contacts';
+export interface LayoutSurveyQuestionIdList extends Struct.ComponentSchema {
+  collectionName: 'components_layout_survey_question_id_lists';
   info: {
-    displayName: 'SecondaryContact';
-    icon: 'command';
+    description: '';
+    displayName: 'SurveyQuestionIdList';
   };
   attributes: {
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-    Email: Schema.Attribute.Email & Schema.Attribute.Required;
-    Phone: Schema.Attribute.String;
-  };
-}
-
-export interface CompanyPrimaryContact extends Struct.ComponentSchema {
-  collectionName: 'components_company_primary_contacts';
-  info: {
-    displayName: 'PrimaryContact';
-    icon: 'cup';
-  };
-  attributes: {
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-    Email: Schema.Attribute.Email & Schema.Attribute.Required;
-    Phone: Schema.Attribute.String;
+    survey_question: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::survey-question.survey-question'
+    >;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'layout.survey-question': LayoutSurveyQuestion;
-      'layout.support': LayoutSupport;
-      'layout.resources': LayoutResources;
-      'layout.newsletter-form': LayoutNewsletterForm;
-      'layout.mission-statement': LayoutMissionStatement;
-      'layout.link': LayoutLink;
-      'layout.hero': LayoutHero;
-      'layout.guiddance': LayoutGuiddance;
-      'layout.flyer-dates': LayoutFlyerDates;
-      'layout.event-host-contact': LayoutEventHostContact;
-      'layout.club-organizer': LayoutClubOrganizer;
-      'layout.club-event': LayoutClubEvent;
-      'layout.child-section': LayoutChildSection;
-      'layout.address': LayoutAddress;
-      'config-social-link.social-link': ConfigSocialLinkSocialLink;
-      'company.secondary-contact': CompanySecondaryContact;
       'company.primary-contact': CompanyPrimaryContact;
+      'company.secondary-contact': CompanySecondaryContact;
+      'config-social-link.social-link': ConfigSocialLinkSocialLink;
+      'data.assigned-survey-question-ids': DataAssignedSurveyQuestionIds;
+      'data.question-id-list': DataQuestionIdList;
+      'data.updated-by-user': DataUpdatedByUser;
+      'layout.address': LayoutAddress;
+      'layout.child-section': LayoutChildSection;
+      'layout.club-event': LayoutClubEvent;
+      'layout.club-organizer': LayoutClubOrganizer;
+      'layout.event-host-contact': LayoutEventHostContact;
+      'layout.flyer-dates': LayoutFlyerDates;
+      'layout.guiddance': LayoutGuiddance;
+      'layout.hero': LayoutHero;
+      'layout.link': LayoutLink;
+      'layout.mission-statement': LayoutMissionStatement;
+      'layout.newsletter-form': LayoutNewsletterForm;
+      'layout.resources': LayoutResources;
+      'layout.secondary-content': LayoutSecondaryContent;
+      'layout.student-answer': LayoutStudentAnswer;
+      'layout.support': LayoutSupport;
+      'layout.survey-question': LayoutSurveyQuestion;
+      'layout.survey-question-id-list': LayoutSurveyQuestionIdList;
     }
   }
 }

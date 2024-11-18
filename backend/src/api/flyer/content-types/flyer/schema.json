@@ -15,15 +15,11 @@
     "Image": {
       "type": "media",
       "multiple": true,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
       ]
-    },
-    "EventOrganizer": {
-      "type": "string",
-      "required": true
     },
     "Title": {
       "type": "string",
@@ -39,6 +35,43 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::company.company"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student"
+    },
+    "student_clubs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student-club.student-club"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Flyer-by-Advertiser",
+        "Flyer-by-Student",
+        "Flyer-by-Student-Club",
+        "Flyer-by-CSN",
+        "Flyer-by-College",
+        "Flyer-by-Government"
+      ],
+      "default": "Flyer-by-Advertiser",
+      "required": true
+    },
+    "URL_Label": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "URL_Label"
+    },
+    "advertisers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::advertiser.advertiser"
     }
   }
 }

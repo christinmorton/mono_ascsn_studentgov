@@ -59,6 +59,12 @@
         "layout.newsletter-form",
         "layout.mission-statement"
       ]
+    },
+    "secondary_content": {
+      "displayName": "secondary_content",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.secondary-content"
     }
   }
 }

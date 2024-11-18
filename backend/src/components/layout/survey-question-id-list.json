@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_survey_question_id_lists",
+  "info": {
+    "displayName": "SurveyQuestionIdList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "survey_question": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::survey-question.survey-question"
+    }
+  }
+}

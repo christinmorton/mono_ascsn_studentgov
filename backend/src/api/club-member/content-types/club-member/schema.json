@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "club_members",
+  "info": {
+    "singularName": "club-member",
+    "pluralName": "club-members",
+    "displayName": "ClubMember"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student_id": {
+      "type": "string",
+      "required": true
+    },
+    "joined_club": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

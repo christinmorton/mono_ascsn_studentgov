@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_student_answers",
+  "info": {
+    "displayName": "StudentAnswer",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "plain_text_answer": {
+      "type": "text"
+    },
+    "rich_text_answer": {
+      "type": "blocks"
+    },
+    "resources": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ]
+    },
+    "answered_question_id": {
+      "type": "string"
+    }
+  }
+}

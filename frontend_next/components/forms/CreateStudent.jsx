@@ -1,27 +1,19 @@
 import React from 'react'
 
-import { LoginAction } from '@/actions/Auth'
+import { CreateStudentAction } from '@/actions/StudentActions'
 
-const instructions = 'Use this form to login to your account. If you do not have an account please go ahead and register one if you are a current csn student.'
+const instructions = 'Use this form to register an account on this app. This app is not connected to the csn system and will never ask for sensitive information. The main purposes of this application is to allow the student government to a send survey\' to students and inform students of club info and club event. Also this application will provide a curated resource of ASCSN events and resources.';
 
 
-const CreateStudent = () => {
+const CreateStudent = async () => {
     return (
         <div>
             <h1>Are you a current CSN student?</h1>
             <p>{instructions}</p>
-            <form action={RegisterAction}>
-                <div>
-                    <label htmlFor="currentStudent">Current CSN Student</label>
-                    <input type="radio" name="currentStudent" />
-                </div>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" placeholder="Enter your email here..."  />
-                </div>
+            <form action={CreateStudentAction}>
                 <div>
                     <label htmlFor="studentID">Student ID number</label>
-                    <input type="number" name="studentID" placeholder="Enter your studentID here..."  />
+                    <input type="text" name="student_id" placeholder="Enter your studentID here..."  />
                 </div>
                 <div>
                     <button type='sumbit'>Register</button>

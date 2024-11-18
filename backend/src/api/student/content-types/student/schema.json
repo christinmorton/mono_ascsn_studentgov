@@ -4,7 +4,8 @@
   "info": {
     "singularName": "student",
     "pluralName": "students",
-    "displayName": "Student"
+    "displayName": "Student",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -15,18 +16,20 @@
       "type": "string",
       "required": true
     },
-    "StudentId": {
-      "type": "integer"
-    },
-    "Email": {
-      "type": "email",
-      "required": true,
-      "unique": true
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "student_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "user_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

@@ -5,6 +5,7 @@ import React from 'react'
 import TopHeader from './menus/TopHeader'
 import BottomHeader from './menus/BottomHeader'
 import Logo from './Logo'
+import UserHeader from './UserHeader'
 
 
 
@@ -39,6 +40,9 @@ const Header = async () => {
             </div>
             <div className='w-full flex flex-row items-center justify-start'>
                 <BottomHeader />
+            </div>
+            <div>
+                <UserHeader />
             </div>
         </header>
     )

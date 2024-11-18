@@ -35,20 +35,20 @@
         "audios"
       ]
     },
-    "survey_question_ids": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::survey-question.survey-question"
-    },
-    "students": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::student.student"
-    },
-    "SurveyQuestion": {
+    "assigned_survey_question_id_list": {
+      "displayName": "assigned_survey_question_ids",
       "type": "component",
       "repeatable": true,
-      "component": "layout.survey-question"
+      "component": "data.assigned-survey-question-ids"
+    },
+    "created_by_user": {
+      "type": "string"
+    },
+    "updated_by_user": {
+      "displayName": "updated_by_user",
+      "type": "component",
+      "repeatable": true,
+      "component": "data.updated-by-user"
     }
   }
 }

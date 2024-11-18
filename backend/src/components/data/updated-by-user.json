@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_data_updated_by_users",
+  "info": {
+    "displayName": "updated_by_user",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "user_id": {
+      "type": "string"
+    }
+  }
+}

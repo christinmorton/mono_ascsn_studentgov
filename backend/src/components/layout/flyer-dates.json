@@ -53,6 +53,15 @@
     },
     "EventStatus": {
       "type": "string"
+    },
+    "Discount": {
+      "type": "string"
+    },
+    "SpecialOffer": {
+      "type": "string"
+    },
+    "SpecialDescription": {
+      "type": "text"
     }
   }
 }

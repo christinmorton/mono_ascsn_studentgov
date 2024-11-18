@@ -4,7 +4,8 @@
   "info": {
     "singularName": "student-club",
     "pluralName": "student-clubs",
-    "displayName": "StudentClub"
+    "displayName": "StudentClub",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,12 +22,13 @@
       "targetField": "Title"
     },
     "Featured": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "PrettyDescription": {
       "type": "blocks"
@@ -45,6 +47,9 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.club-organizer"
+    },
+    "club_leader_id": {
+      "type": "string"
     }
   }
 }

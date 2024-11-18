@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_data_question_id_lists",
+  "info": {
+    "displayName": "question_id_list"
+  },
+  "options": {},
+  "attributes": {
+    "question_id": {
+      "type": "string",
+      "required": true
+    },
+    "question_slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

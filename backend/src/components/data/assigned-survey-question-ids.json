@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_data_assigned_survey_question_ids",
+  "info": {
+    "displayName": "assigned_survey_question_ids",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "question_id": {
+      "type": "string"
+    },
+    "question_slug": {
+      "type": "string"
+    }
+  }
+}

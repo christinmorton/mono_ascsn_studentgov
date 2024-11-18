@@ -1,18 +1,21 @@
 import React from 'react'
-import Link from 'next/link';
 
-import { GetAllQuestions, GetAllSurveys } from '@/actions/GetSurveys'
+import { GetAllSurveys } from '@/actions/GetSurveys'
 import SurveyCards from '@/components/SurveyCards';
+
+// import { GetCurrentStudent } from '@/actions/StudentActions'
+// import { redirect } from 'next/navigation'
 
 const SurveyPage = async () => {
     const surveys = await GetAllSurveys();
-    console.log(surveys)
   return (
     <main>
         <div>
             <h1>Surveys</h1>
 
-            <SurveyCards surveys={surveys} />
+            <p>Here are current surveys by the student Government.</p>
+
+            <div><SurveyCards surveys={surveys} /></div>
         </div>
     </main>
   )

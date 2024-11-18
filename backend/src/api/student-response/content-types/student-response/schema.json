@@ -12,9 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "ShortAnswer": {
       "type": "string"
@@ -22,27 +22,68 @@
     "LongAnswer": {
       "type": "text"
     },
-    "OpenDate": {
-      "type": "datetime"
-    },
-    "Bool": {
-      "type": "boolean"
-    },
     "Feedback": {
       "type": "text"
     },
-    "BoolText": {
+    "question_input_type": {
+      "type": "enumeration",
+      "enum": [
+        "null",
+        "button",
+        "checkbox",
+        "color",
+        "date",
+        "datetime-local",
+        "email",
+        "file",
+        "hidden",
+        "image",
+        "month",
+        "number",
+        "password",
+        "radio",
+        "range",
+        "reset",
+        "search",
+        "submit",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week"
+      ]
+    },
+    "answered_check_box": {
+      "type": "boolean"
+    },
+    "answered_checkbox_for": {
       "type": "string"
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+    "StudentAnswer": {
+      "displayName": "StudentAnswer",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.student-answer",
+      "required": false
     },
-    "survey_question": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::survey-question.survey-question"
+    "question_id_list": {
+      "displayName": "question_id_list",
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question-id-list"
+    },
+    "response_to_survey_id": {
+      "type": "string"
+    },
+    "OpenDate": {
+      "type": "string"
+    },
+    "CompletionDate": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": "string",
+      "required": true
     }
   }
 }

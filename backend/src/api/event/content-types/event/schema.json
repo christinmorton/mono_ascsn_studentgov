@@ -51,6 +51,18 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::company.company"
+    },
+    "is_club_event": {
+      "type": "boolean",
+      "default": false
+    },
+    "student_club_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student-club.student-club"
+    },
+    "ascsn_event": {
+      "type": "boolean"
     }
   }
 }

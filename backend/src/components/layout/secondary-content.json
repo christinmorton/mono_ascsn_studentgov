@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_layout_secondary_contents",
+  "info": {
+    "displayName": "secondary_content",
+    "icon": "cast"
+  },
+  "options": {},
+  "attributes": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "ascsn_content": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::marketing-article.marketing-article"
+    },
+    "CallToAction": {
+      "type": "string"
+    }
+  }
+}

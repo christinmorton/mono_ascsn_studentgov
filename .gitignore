@@ -6,3 +6,5 @@ resources/*
 # resources/ASCSN_Logo_Study.afdesign~lock~
 
 /frontend_vanilla*
+
+local.env

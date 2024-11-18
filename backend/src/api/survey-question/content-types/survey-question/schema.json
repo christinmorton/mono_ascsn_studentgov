@@ -32,14 +32,36 @@
       ],
       "required": true
     },
-    "student_responses": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::student-response.student-response"
-    },
     "slug": {
       "type": "uid",
       "targetField": "Question"
+    },
+    "input_type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "checkbox",
+        "color",
+        "date",
+        "datetime-local",
+        "email",
+        "file",
+        "hidden",
+        "image",
+        "month",
+        "number",
+        "password",
+        "radio",
+        "range",
+        "reset",
+        "search",
+        "submit",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week"
+      ]
     }
   }
 }
