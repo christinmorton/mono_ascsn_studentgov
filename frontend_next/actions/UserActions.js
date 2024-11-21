@@ -14,7 +14,7 @@ export const GetCurrentUser = async () => {
 
     if (!token) redirect('/signin')
 
-    const user = await fetch(`http://localhost:1337/api/users/me`, {
+    const user = await fetch(`${SERVER_NAME}/api/users/me`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token.value}`,

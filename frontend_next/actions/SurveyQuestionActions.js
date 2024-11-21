@@ -35,7 +35,7 @@ export const GetAllQuestions = async () => {
 
     if (!token) redirect('/signin')
 
-    const questions = await fetch(`http://localhost:1337/api/survey-questions?pagination[page]=1&pagination[pageSize]=40`, {
+    const questions = await fetch(`${SERVER_NAME}/api/survey-questions?pagination[page]=1&pagination[pageSize]=40`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token.value}`,
@@ -94,7 +94,7 @@ export const AnswerSingleQuestion = async (formState, formData) => {
 
     console.log(answer)
 
-//   const studentResposne = await fetch(`http://localhost:1337/api/student-reponses?filters[user_id][$eq]=${id}`, {
+//   const studentResposne = await fetch(`${SERVER_NAME}/api/student-reponses?filters[user_id][$eq]=${id}`, {
 //     method: 'POST',
 //     headers: {
 //         "Content-Type": "application/json",
@@ -133,7 +133,7 @@ export const GetQuestionById = async (id) => {
     const cookieStore = await cookies();
     const token = cookieStore.get(COOKIE_NAME)
 
-    const question = await fetch(`http://localhost:1337/api/content-type-builder/components/${id}?populate=*`, {
+    const question = await fetch(`${SERVER_NAME}/api/content-type-builder/components/${id}?populate=*`, {
       method: 'GET',
       headers: {
           Authorization: `Bearer ${token.value}`,

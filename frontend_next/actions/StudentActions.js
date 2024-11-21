@@ -25,7 +25,7 @@ export const GetCurrentStudent = async () => {
 
     const id = user.documentId;
 
-    const student = await fetch(`http://localhost:1337/api/students?filters[user_id][$eq]=${id}`, {
+    const student = await fetch(`${SERVER_NAME}/api/students?filters[user_id][$eq]=${id}`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token.value}`,
@@ -54,7 +54,7 @@ export const CreateStudentAction = async (formData) => {
 
     if (!token) redirect('/auth/login')
 
-    const response = await fetch(`http://localhost:1337/api/students`, {
+    const response = await fetch(`${SERVER_NAME}/api/students`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -94,7 +94,7 @@ export const CreateStudentResponse = async (formData) => {
 
     if (!token) redirect('/auth/login')
 
-    const response = await fetch(`http://localhost:1337/api/student-repsonses`, {
+    const response = await fetch(`${SERVER_NAME}/api/student-repsonses`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",

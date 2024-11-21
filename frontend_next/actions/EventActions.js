@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { COOKIE_NAME } from "@/utils/constants";
+import { COOKIE_NAME, SERVER_NAME } from "@/utils/constants";
 
 import { GetCurrentUser } from './UserActions';
 
 export const GetAllEvents = async () => {
-    const events = await fetch(`http://localhost:1337/api/events?populate=${'*'}`)
+    const events = await fetch(`${SERVER_NAME}/api/events?populate=${'*'}`)
   
     const data = await events.json();
   
@@ -14,7 +14,7 @@ export const GetAllEvents = async () => {
 }
 
 export const GetEventById = async (id) => {
-    const event = await fetch(`http://localhost:1337/api/events/${id}?populate=${'*'}`)
+    const event = await fetch(`${SERVER_NAME}/api/events/${id}?populate=${'*'}`)
 
     if (!event.ok) {
         const errorData = await event.json();

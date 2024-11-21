@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { COOKIE_NAME } from "@/utils/constants";
+import { COOKIE_NAME, SERVER_NAME } from "@/utils/constants";
 
 import { GetCurrentUser } from './UserActions';
 
 export const GetAllFlyers = async () => {
-    const flyers = await fetch(`http://localhost:1337/api/flyers?populate=${'*'}`)
+    const flyers = await fetch(`${SERVER_NAME}/api/flyers?populate=${'*'}`)
   
     const data = await flyers.json();
   
@@ -14,7 +14,7 @@ export const GetAllFlyers = async () => {
 }
 
 export const GetFlyerById = async (id) => {
-    const flyer = await fetch(`http://localhost:1337/api/flyers/${id}?populate=${'*'}`)
+    const flyer = await fetch(`${SERVER_NAME}/api/flyers/${id}?populate=${'*'}`)
 
     if (!flyer.ok) {
         const errorData = await flyer.json();

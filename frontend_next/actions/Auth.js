@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { COOKIE_NAME } from "@/utils/constants";
+import { COOKIE_NAME, SERVER_NAME } from "@/utils/constants";
 
 const authSchema = z.object({
     username: z.string().optional(),
@@ -20,7 +20,7 @@ export const Login = async (FormData) => {
       })
     
       try {
-        const response = await fetch('http://localhost:1337/api/auth/local', {
+        const response = await fetch(`${SERVER_NAME}/api/auth/local`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -60,7 +60,7 @@ export const Register = async (FormData) => {
     //   console.log(data)
     
       try {
-        const response = await fetch('http://localhost:1337/api/auth/local/register', {
+        const response = await fetch(`${SERVER_NAME}/api/auth/local/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

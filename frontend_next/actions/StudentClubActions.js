@@ -12,7 +12,7 @@ export const GetAllStudentClubs = async () => {
 
     if(!token) redirect('/auth/login')
 
-    const clubs = await fetch(`http://localhost:1337/api/student-clubs`)
+    const clubs = await fetch(`${SERVER_NAME}/api/student-clubs`)
 
     if (!clubs.ok) {
         const errorData = await clubs.json();
@@ -27,7 +27,7 @@ export const GetAllStudentClubs = async () => {
 }
 
 export const GetStudentClubById = async (id) => {
-    const club = await fetch(`http://localhost:1337/api/student-clubs/${id}?populate=*`)
+    const club = await fetch(`${SERVER_NAME}/api/student-clubs/${id}?populate=*`)
 
     if (!club.ok) {
         const errorData = await club.json();

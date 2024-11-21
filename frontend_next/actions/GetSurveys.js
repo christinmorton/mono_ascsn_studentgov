@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { COOKIE_NAME } from "@/utils/constants";
+import { COOKIE_NAME, SERVER_NAME } from "@/utils/constants";
 
 import { GetCurrentUser } from './UserActions';
 
@@ -20,7 +20,7 @@ const surveyQuestionItemSchema = z.object({
 const surveyQuestionListSchema = z.array(surveyQuestionItemSchema)
 
 export const GetAllSurveys = async () => {
-    const menu = await fetch(`http://localhost:1337/api/student-surveys?populate=${'*'}`)
+    const menu = await fetch(`${SERVER_NAME}/api/student-surveys?populate=${'*'}`)
   
     const data = await menu.json();
   
@@ -28,7 +28,7 @@ export const GetAllSurveys = async () => {
   }
 
   export const GetAllQuestions = async () => {
-    const menu = await fetch(`http://localhost:1337/api/survey-questions?populate=${'*'}`)
+    const menu = await fetch(`${SERVER_NAME}/api/survey-questions?populate=${'*'}`)
   
     const data = await menu.json();
   
@@ -43,7 +43,7 @@ export const GetAllSurveys = async () => {
 
     // if(!student) return {error: true, message: "student missing..."}
 
-    const survey = await fetch(`http://localhost:1337/api/student-surveys/${id}?populate=*`, {
+    const survey = await fetch(`${SERVER_NAME}/api/student-surveys/${id}?populate=*`, {
       method: 'GET',
       headers: {
           Authorization: `Bearer ${token.value}`,
@@ -99,7 +99,7 @@ export const GetAllSurveys = async () => {
       created_by_user: formData.get('user_id')
     })
 
-    const response = await fetch(`http://localhost:1337/api/survey/${survey_id}`, {
+    const response = await fetch(`${SERVER_NAME}/api/survey/${survey_id}`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export const GetAllSurveys = async () => {
 
     console.log(s);
 
-    const response = await fetch(`http://localhost:1337/api/survey/${survey_id}`, {
+    const response = await fetch(`${SERVER_NAME}/api/survey/${survey_id}`, {
       method: 'PUT',
       headers: {
           "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export const GetAllSurveys = async () => {
       created_by_user: formData.get('user_id')
     })
 
-    const response = await fetch(`http://localhost:1337/api/survey/${survey_id}`, {
+    const response = await fetch(`${SERVER_NAME}/api/survey/${survey_id}`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json",

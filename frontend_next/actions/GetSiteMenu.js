@@ -1,5 +1,8 @@
+import { SERVER_NAME } from "@/utils/constants";
+
+
 export const GetSiteMenu = async (searchTerm) => {
-    const menu = await fetch(`http://localhost:1337/api/menus?populate=${'*'}`)
+    const menu = await fetch(`${SERVER_NAME}/api/menus?populate=${'*'}`)
   
     const data = await menu.json();
   
@@ -8,7 +11,7 @@ export const GetSiteMenu = async (searchTerm) => {
 
 
   export const GetCSNLocations = async (searchTerm) => {
-    const menu = await fetch(`http://localhost:1337/api/addresses?populate=${'*'}`)
+    const menu = await fetch(`${SERVER_NAME}/api/addresses?populate=${'*'}`)
   
     const data = await menu.json();
   

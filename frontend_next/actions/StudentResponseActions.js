@@ -59,7 +59,7 @@ export const createStudentResponse = async (formData) => {
 
     urlParam = formData.get('survey_id');
 
-    const response = await fetch('http://localhost:1337/api/student-responses', {
+    const response = await fetch(`${SERVER_NAME}/api/student-responses`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -100,7 +100,7 @@ export const GetStudentResponsesByUser = async () => {
 
     const user = await GetCurrentUser();
 
-    const response = await fetch(`http://localhost:1337/api/student-responses?filters[student_id]=${user.documentId}`, {
+    const response = await fetch(`${SERVER_NAME}/api/student-responses?filters[student_id]=${user.documentId}`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",
@@ -128,7 +128,7 @@ export const GetStudentResponseById = async (id) => {
 
     const user = await GetCurrentUser();
 
-    const response = await fetch(`http://localhost:1337/api/student-response/${id}`, {
+    const response = await fetch(`${SERVER_NAME}/api/student-response/${id}`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export const UpdateStudentResponse = async (formData) => {
 
     urlParam = formData.get('survey_id');
 
-    const response = await fetch(`http://localhost:1337/api/student-responses/${'id'}`, {
+    const response = await fetch(`${SERVER_NAME}/api/student-responses/${'id'}`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json",
@@ -215,7 +215,7 @@ export const alreadyStartedSurvey = async(response_id, survey_id) => {
 
     const user = await GetCurrentUser();
 
-    const response = await fetch(`http://localhost:1337/api/student-responses/${response_id}?filters[student_id]=${user.documentId}&filters[response_to_survey_id]=${survey_id}`, {
+    const response = await fetch(`${SERVER_NAME}/api/student-responses/${response_id}?filters[student_id]=${user.documentId}&filters[response_to_survey_id]=${survey_id}`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token.value}`,
