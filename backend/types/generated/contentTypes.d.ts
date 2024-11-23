@@ -465,6 +465,61 @@ export interface ApiAdvertiserAdvertiser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAscsnStudentUnionAscsnStudentUnion
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ascsn_student_unions';
+  info: {
+    description: '';
+    displayName: 'ASCSNStudentUnion';
+    pluralName: 'ascsn-student-unions';
+    singularName: 'ascsn-student-union';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    building_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Hours of Operation and Services Building Hours: Monday through Friday, 7am to 5pm. '>;
+    coffee_bar_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Coffee Bar and Cafe - Monday through Thursday, 8am to 1pm.'>;
+    counseling_and_retention_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Counseling and Retention'>;
+    coyote_cupboard_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Coyote Cupboard: The Cupboard is open Monday through Thursday 9 am to 4 pm. Closed Fridays.'>;
+    coyote_cupboard_note: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<' Coyote Cupboard: The Coyote Cupboard is available to assist you via walk-in services.'>;
+    coyote_cupboard_note_2: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'No appointment is needed. '>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    grill_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Grill hours - Monday through Thursday, 10am to 1pm.'>;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ascsn-student-union.ascsn-student-union'
+    > &
+      Schema.Attribute.Private;
+    multi_cultural_hours: Schema.Attribute.String;
+    office_number: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    student_access_requirements: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Students must have a state-issued ID or CSN issued ID to reserve a study room. '>;
+    student_government_hours: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Student Government Office Hours: Monday through Friday 8 -5 pm, '>;
+    study_room_note: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Students must have a state-issued ID or CSN issued ID to reserve a study room.'>;
+    study_room_rule: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Study rooms available for 90-minute increments. '>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiClubMemberClubMember extends Struct.CollectionTypeSchema {
   collectionName: 'club_members';
   info: {
@@ -1839,6 +1894,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::address.address': ApiAddressAddress;
       'api::advertiser.advertiser': ApiAdvertiserAdvertiser;
+      'api::ascsn-student-union.ascsn-student-union': ApiAscsnStudentUnionAscsnStudentUnion;
       'api::club-member.club-member': ApiClubMemberClubMember;
       'api::company.company': ApiCompanyCompany;
       'api::event.event': ApiEventEvent;

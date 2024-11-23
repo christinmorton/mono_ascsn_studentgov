@@ -3,7 +3,6 @@ import ASCSNChildSection from './ASCSNChildSection'
 import StudentGovernmentCard from './StudentGovernmentCard'
 
 const StudentBodyGovernmentSection = ({content}) => {
-    console.log(content)
     return (
         <section className='max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto'>
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">Student Government</h1>

@@ -1,5 +1,5 @@
 
-import { GetStudentGovernmentTermById, GetHomepageContent, GetPage } from "@/actions/PageActions";
+import { GetStudentGovernmentTermById, GetHomepageContent, GetPage, GetStudentUnion } from "@/actions/PageActions";
 
 import {CURRENT_STUDENT_GOVERNMENT_ID} from '@/utils/constants'
 
@@ -16,13 +16,20 @@ const Home = async () => {
   const page = await GetPage('homepage');
   const content = await GetHomepageContent();
   const term = await GetStudentGovernmentTermById(CURRENT_STUDENT_GOVERNMENT_ID);
+  const studentUnion = await GetStudentUnion();
   return (
     <main className="font-[family-name:var(--font-geist-sans)]">
       <GuidanceSection content={content.guidance} />
 
       <StudentBodyStatsSection />
 
-      <ASCSNStudentUnionsSection content={content.studentUnions} />
+      <div className="h-[600px] w-full flex flex-row items-center justify-evenly">
+        <ASCSNContentSection content={content.mission_statement} />
+
+        <ASCSNContentSection content={content.goals} />
+      </div>
+
+      <ASCSNStudentUnionsSection content={content.studentUnions} studentUnion={studentUnion} />
       
       <SupportSection content={content.support} />
 
@@ -32,9 +39,9 @@ const Home = async () => {
 
       <StudentBodyGovernmentSection content={term}/>
 
-      {content.ascsnContent.map((content, index) => (
+      {/* {content.ascsnContent.map((content, index) => (
         <ASCSNContentSection key={index} content={content} />
-      ))}
+      ))} */}
     </main>
   );
 }

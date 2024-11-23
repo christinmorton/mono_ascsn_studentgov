@@ -49,6 +49,8 @@ export const GetHomepageContent = async () => {
     let support = null;
     let resources = null;
     let guidance = null;
+    let mission_statement = null;
+    let goals = null;
     let resourceLinks = null;
     let studentGovernmentBody = null;
     let studentUnions = null;
@@ -85,6 +87,12 @@ export const GetHomepageContent = async () => {
             case 'Student Unions':
                 studentUnions = content
                 break;
+            case 'Mission Statement':
+                mission_statement = content
+                break;
+            case 'Goals':
+                goals = content
+                break;
             default:
                 break;
         }
@@ -92,11 +100,11 @@ export const GetHomepageContent = async () => {
 
     // const ascsnContent = [support, resources, guidance, resourceLinks, studentGovernmentBody].filter(Boolean);
 
-    const allContent = [support, resources, guidance, resourceLinks, studentGovernmentBody, studentUnions].filter(Boolean);
+    // const allContent = [support, resources, guidance, resourceLinks, studentGovernmentBody, studentUnions].filter(Boolean);
 
-    const ascsnContent = articles.filter((article) => {
-        return !allContent.some((content) => content?.id === article.id);
-    });
+    // const ascsnContent = articles.filter((article) => {
+    //     return !allContent.some((content) => content?.id === article.id);
+    // });
 
     return {
         support,
@@ -104,7 +112,8 @@ export const GetHomepageContent = async () => {
         guidance,
         resourceLinks,
         studentUnions,
-        ascsnContent,
+        mission_statement,
+        goals
     };
 };
 
@@ -165,6 +174,21 @@ export const GetStudentGovernmentTermById = async (id) => {
     }
   
     const data = await studentGovernmentTerm.json();
+  
+    return data.data;
+}
+
+
+export const GetStudentUnion = async () => {
+const studentUnion = await fetch(`${SERVER_NAME}/api/ascsn-student-union?populate=*`)
+
+    if (!studentUnion.ok) {
+        const errorData = await studentUnion.json();
+        console.error('Error:', errorData);
+        return errorData
+    }
+  
+    const data = await studentUnion.json();
   
     return data.data;
 }

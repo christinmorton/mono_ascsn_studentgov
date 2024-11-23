@@ -4,7 +4,7 @@ import ButtonOutline from './ButtonOutline'
 import Image from 'next/image'
 import StudentUnionTabs from './StudentUnionTabs'
 
-const ASCSNStudentUnionsSection = ({content}) => {
+const ASCSNStudentUnionsSection = ({content, studentUnion}) => {
 
     return (
         <section className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
@@ -14,8 +14,8 @@ const ASCSNStudentUnionsSection = ({content}) => {
                 <p className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center">{content.MarketingLead}</p>
             </div>
 
-            <div className='w-[100%] bg-[#004890] text-white'>
-               <StudentUnionTabs studentUnions={content.ChildSection} />
+            <div className='w-[100%]'>
+               <StudentUnionTabs content={content.ChildSection} studentUnion={studentUnion} />
             </div>
 
             {/* <div className='flex flex-row items-center justify-evenly'>

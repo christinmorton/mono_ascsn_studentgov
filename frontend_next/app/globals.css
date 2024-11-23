@@ -22,11 +22,11 @@ body {
 
 
 .tabs {
-  @apply px-4 py-2 font-semibold text-gray-600 cursor-pointer border-b-2 transition-colors duration-300;
+  @apply px-4 py-2 text-3xl font-semibold text-blue-600 cursor-pointer border-b-2 transition-colors duration-300;
 }
 
 .active-tab {
-  @apply text-blue-500 border-blue-500;
+  @apply text-yellow-500 border-yellow-500;
 }
 
 .content {
@@ -62,4 +62,24 @@ li.check:before {
   background-image: url("/assets/vendor_assets/template_1/Icon/jam_check.svg");
   top: -0.5em;
   font-size: 400%;
+}
+
+.highlight-border {
+  border: solid 2px #FFD200;
+  border-radius: 25px;
+}
+
+.download-links > div:first-child {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.download-links > div:last-child {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.download-links > div:hover {
+  border: thick double #FFD200;
+  border-style: inset;
 }
