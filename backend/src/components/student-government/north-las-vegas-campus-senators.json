@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_north_las_vegas_campus_senators",
+  "info": {
+    "displayName": "north_las_vegas_campus_senators",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "North Las Vegas Campus Senator"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

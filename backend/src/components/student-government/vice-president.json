@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_vice_presidents",
+  "info": {
+    "displayName": "vice_president",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Vice President"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

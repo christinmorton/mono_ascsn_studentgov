@@ -356,6 +356,111 @@ export interface LayoutSurveyQuestionIdList extends Struct.ComponentSchema {
   };
 }
 
+export interface StudentGovernmentCharlestonCampusSenators
+  extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_charleston_campus_senators';
+  info: {
+    displayName: 'charleston_campus_senators';
+    icon: 'bulletList';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Charleston Campus Senator'>;
+  };
+}
+
+export interface StudentGovernmentExtensionSiteSenators
+  extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_extension_site_senators';
+  info: {
+    displayName: 'extension_site_senators';
+    icon: 'brush';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Extension Site - Senators'>;
+  };
+}
+
+export interface StudentGovernmentHendersonCampusSenators
+  extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_henderson_campus_senators';
+  info: {
+    displayName: 'henderson_campus_senators';
+    icon: 'archive';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Henderson Campus Senators'>;
+  };
+}
+
+export interface StudentGovernmentNorthLasVegasCampusSenators
+  extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_north_las_vegas_campus_senators';
+  info: {
+    displayName: 'north_las_vegas_campus_senators';
+    icon: 'apps';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'North Las Vegas Campus Senator'>;
+  };
+}
+
+export interface StudentGovernmentPresident extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_presidents';
+  info: {
+    displayName: 'president';
+    icon: 'emotionUnhappy';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'President'>;
+  };
+}
+
+export interface StudentGovernmentSecretary extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_secretaries';
+  info: {
+    displayName: 'secretary';
+    icon: 'cloud';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Secretary'>;
+  };
+}
+
+export interface StudentGovernmentTreasurer extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_treasurers';
+  info: {
+    displayName: 'treasurer';
+    icon: 'book';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Treasurer'>;
+  };
+}
+
+export interface StudentGovernmentVicePresident extends Struct.ComponentSchema {
+  collectionName: 'components_student_government_vice_presidents';
+  info: {
+    displayName: 'vice_president';
+    icon: 'gate';
+  };
+  attributes: {
+    member_name: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Vice President'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -382,6 +487,14 @@ declare module '@strapi/strapi' {
       'layout.support': LayoutSupport;
       'layout.survey-question': LayoutSurveyQuestion;
       'layout.survey-question-id-list': LayoutSurveyQuestionIdList;
+      'student-government.charleston-campus-senators': StudentGovernmentCharlestonCampusSenators;
+      'student-government.extension-site-senators': StudentGovernmentExtensionSiteSenators;
+      'student-government.henderson-campus-senators': StudentGovernmentHendersonCampusSenators;
+      'student-government.north-las-vegas-campus-senators': StudentGovernmentNorthLasVegasCampusSenators;
+      'student-government.president': StudentGovernmentPresident;
+      'student-government.secretary': StudentGovernmentSecretary;
+      'student-government.treasurer': StudentGovernmentTreasurer;
+      'student-government.vice-president': StudentGovernmentVicePresident;
     }
   }
 }

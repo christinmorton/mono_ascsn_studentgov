@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_government_terms",
+  "info": {
+    "singularName": "student-government-term",
+    "pluralName": "student-government-terms",
+    "displayName": "StudentGovernmentTerm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "semester_year": {
+      "type": "string"
+    },
+    "GroupImage": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Archived": {
+      "type": "boolean"
+    },
+    "president": {
+      "displayName": "president",
+      "type": "component",
+      "repeatable": false,
+      "component": "student-government.president"
+    },
+    "vice_president": {
+      "displayName": "vice_president",
+      "type": "component",
+      "repeatable": false,
+      "component": "student-government.vice-president"
+    },
+    "treasurer": {
+      "displayName": "treasurer",
+      "type": "component",
+      "repeatable": false,
+      "component": "student-government.treasurer"
+    },
+    "secretary": {
+      "displayName": "secretary",
+      "type": "component",
+      "repeatable": false,
+      "component": "student-government.secretary"
+    },
+    "charleston_campus_senators": {
+      "displayName": "charleston_campus_senators",
+      "type": "component",
+      "repeatable": true,
+      "component": "student-government.charleston-campus-senators"
+    },
+    "extension_site_senators": {
+      "displayName": "extension_site_senators",
+      "type": "component",
+      "repeatable": true,
+      "component": "student-government.extension-site-senators"
+    },
+    "north_las_vegas_campus_senators": {
+      "displayName": "north_las_vegas_campus_senators",
+      "type": "component",
+      "repeatable": true,
+      "component": "student-government.north-las-vegas-campus-senators"
+    },
+    "henderson_campus_senators": {
+      "displayName": "henderson_campus_senators",
+      "type": "component",
+      "repeatable": true,
+      "component": "student-government.henderson-campus-senators"
+    }
+  }
+}

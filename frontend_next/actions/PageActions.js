@@ -103,7 +103,6 @@ export const GetHomepageContent = async () => {
         resources,
         guidance,
         resourceLinks,
-        studentGovernmentBody,
         studentUnions,
         ascsnContent,
     };
@@ -129,4 +128,43 @@ export const DeleteASCSNContent = async(formData) => {
     const token = cookieStore.get(COOKIE_NAME)
 
     const user = await GetCurrentUser();
+}
+
+
+export const GetAllStudentGovernmentTerms = async() => {
+    // const cookieStore = await cookies();
+    // const token = cookieStore.get(COOKIE_NAME)
+
+    // const user = await GetCurrentUser();
+
+    const studentGovernmentTerms = await fetch(`${SERVER_NAME}/api/student-government-terms?populate=*`)
+
+    if (!studentGovernmentTerms.ok) {
+        const errorData = await studentGovernmentTerms.json();
+        console.error('Error:', errorData);
+        return errorData
+    }
+  
+    const data = await studentGovernmentTerms.json();
+  
+    return data.data;
+}
+
+export const GetStudentGovernmentTermById = async (id) => {
+    // const cookieStore = await cookies();
+    // const token = cookieStore.get(COOKIE_NAME)
+
+    // const user = await GetCurrentUser();
+
+    const studentGovernmentTerm = await fetch(`${SERVER_NAME}/api/student-government-terms/${id}?populate=*`)
+
+    if (!studentGovernmentTerm.ok) {
+        const errorData = await studentGovernmentTerm.json();
+        console.error('Error:', errorData);
+        return errorData
+    }
+  
+    const data = await studentGovernmentTerm.json();
+  
+    return data.data;
 }

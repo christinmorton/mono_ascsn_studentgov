@@ -1,21 +1,28 @@
 
-import { GetHomepageContent, GetPage } from "@/actions/PageActions";
+import { GetStudentGovernmentTermById, GetHomepageContent, GetPage } from "@/actions/PageActions";
+
+import {CURRENT_STUDENT_GOVERNMENT_ID} from '@/utils/constants'
+
 import ASCSNContentSection from "@/components/ASCSNContentSection";
 import ASCSNStudentUnionsSection from "@/components/ASCSNStudentUnionsSection";
 import GuidanceSection from "@/components/GuidanceSection";
 import ResourceLinks from "@/components/ResourceLinks";
 import ResourcesSection from "@/components/ResourcesSection";
 import StudentBodyGovernmentSection from "@/components/StudentBodyGovernmentSection";
+import StudentBodyStatsSection from "@/components/StudentBodyStatsSection";
 import SupportSection from "@/components/SupportSection";
 
 const Home = async () => {
   const page = await GetPage('homepage');
   const content = await GetHomepageContent();
-  // console.log(page)
-  console.log(content)
+  const term = await GetStudentGovernmentTermById(CURRENT_STUDENT_GOVERNMENT_ID);
   return (
-    <main className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <main className="font-[family-name:var(--font-geist-sans)]">
       <GuidanceSection content={content.guidance} />
+
+      <StudentBodyStatsSection />
+
+      <ASCSNStudentUnionsSection content={content.studentUnions} />
       
       <SupportSection content={content.support} />
 
@@ -23,9 +30,7 @@ const Home = async () => {
 
       <ResourceLinks content={content.resourceLinks} />
 
-      <StudentBodyGovernmentSection content={content.studentGovernmentBody}/>
-
-      <ASCSNStudentUnionsSection content={content.studentUnions} />
+      <StudentBodyGovernmentSection content={term}/>
 
       {content.ascsnContent.map((content, index) => (
         <ASCSNContentSection key={index} content={content} />

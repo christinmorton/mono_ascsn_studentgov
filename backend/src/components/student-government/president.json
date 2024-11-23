@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_presidents",
+  "info": {
+    "displayName": "president",
+    "icon": "emotionUnhappy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "President"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

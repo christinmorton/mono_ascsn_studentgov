@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_treasurers",
+  "info": {
+    "displayName": "treasurer",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Treasurer"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

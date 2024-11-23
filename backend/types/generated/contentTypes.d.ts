@@ -1009,6 +1009,70 @@ export interface ApiStudentClubStudentClub extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStudentGovernmentTermStudentGovernmentTerm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'student_government_terms';
+  info: {
+    displayName: 'StudentGovernmentTerm';
+    pluralName: 'student-government-terms';
+    singularName: 'student-government-term';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Archived: Schema.Attribute.Boolean;
+    charleston_campus_senators: Schema.Attribute.Component<
+      'student-government.charleston-campus-senators',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    extension_site_senators: Schema.Attribute.Component<
+      'student-government.extension-site-senators',
+      true
+    >;
+    GroupImage: Schema.Attribute.Media<'images' | 'videos', true>;
+    henderson_campus_senators: Schema.Attribute.Component<
+      'student-government.henderson-campus-senators',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::student-government-term.student-government-term'
+    > &
+      Schema.Attribute.Private;
+    north_las_vegas_campus_senators: Schema.Attribute.Component<
+      'student-government.north-las-vegas-campus-senators',
+      true
+    >;
+    president: Schema.Attribute.Component<
+      'student-government.president',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    secretary: Schema.Attribute.Component<
+      'student-government.secretary',
+      false
+    >;
+    semester_year: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+    treasurer: Schema.Attribute.Component<
+      'student-government.treasurer',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vice_president: Schema.Attribute.Component<
+      'student-government.vice-president',
+      false
+    >;
+  };
+}
+
 export interface ApiStudentResponseStudentResponse
   extends Struct.CollectionTypeSchema {
   collectionName: 'student_responses';
@@ -1790,6 +1854,7 @@ declare module '@strapi/strapi' {
       'api::site-header.site-header': ApiSiteHeaderSiteHeader;
       'api::social-company-link.social-company-link': ApiSocialCompanyLinkSocialCompanyLink;
       'api::student-club.student-club': ApiStudentClubStudentClub;
+      'api::student-government-term.student-government-term': ApiStudentGovernmentTermStudentGovernmentTerm;
       'api::student-response.student-response': ApiStudentResponseStudentResponse;
       'api::student-survey.student-survey': ApiStudentSurveyStudentSurvey;
       'api::student.student': ApiStudentStudent;

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_extension_site_senators",
+  "info": {
+    "displayName": "extension_site_senators",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Extension Site - Senators"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

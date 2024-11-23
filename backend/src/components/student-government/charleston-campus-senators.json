@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_charleston_campus_senators",
+  "info": {
+    "displayName": "charleston_campus_senators",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Charleston Campus Senator"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}

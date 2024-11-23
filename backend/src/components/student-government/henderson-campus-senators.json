@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_student_government_henderson_campus_senators",
+  "info": {
+    "displayName": "henderson_campus_senators",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Henderson Campus Senators"
+    },
+    "member_name": {
+      "type": "string"
+    }
+  }
+}
