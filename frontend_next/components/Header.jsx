@@ -38,10 +38,10 @@ const Header = async () => {
                 <Logo />
                 <TopHeader />
             </div>
-            <div className='w-full flex flex-row items-center justify-start'>
+            <div className='w-full flex flex-row items-center justify-start p-0 m-0'>
                 <BottomHeader />
             </div>
-            <div>
+            <div className='w-full flex flex-row items-center justify-start p-0 m-0'>
                 <UserHeader />
             </div>
         </header>

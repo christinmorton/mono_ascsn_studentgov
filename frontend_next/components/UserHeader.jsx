@@ -15,12 +15,15 @@ const UserHeader = async () => {
 
   return (
     <div className='w-full flex flex-row items-center justify-between'>
-      <div className="w-[60%] flex flex-row">
+      <div className={`${!hasToken ? 'w-[100%]' : 'w-[60%]'} flex flex-row`}>
         <ASCSNNavigation />
       </div>
-      <div className='w-[40%]'>
-        {hasToken && <ProfileMenu />}
-      </div>
+      {hasToken && (
+        <div className='w-[40%]'>
+          <ProfileMenu />
+        </div>
+      )}
+      
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { Logout } from '@/actions/Auth'
 
 const ProfileMenu = () => {
   return (
-    <div className='flex flex-row items-center justify-evenly'>
+    <div className='w-full h-[75px] bg-[#004890] text-white flex flex-row items-center justify-evenly'>
         <Link href={'/dashboard'}>dashboard</Link>
         {/* <Link href={'/dashboard/profile'}>Profile</Link> */}
         <Link href={'/surveys'}>Surveys</Link>

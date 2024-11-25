@@ -6,7 +6,7 @@ import NavigationListItem from "../NavigationListItem"
 const ASCSNNavigation = async () => {
     const menu = await GetSiteMenu('ascsn-navigation')
   return (
-    <div className="">
+    <div className='w-full h-[75px] bg-[#004890] text-white'>
       <List>
         {menu.MenuItems.map((item, index) => (
           <NavigationListItem key={index} item={item} />
