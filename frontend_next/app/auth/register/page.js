@@ -2,9 +2,7 @@ import Register from "@/components/forms/Register";
 
 export default function Registerpage() {
     return (
-      <main className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <h1>Register</h1>
-
+      <main className="max-w-screen-xl flex flex-col items-center mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto">
         <Register />
       </main>
     );

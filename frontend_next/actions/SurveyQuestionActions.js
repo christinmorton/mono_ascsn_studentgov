@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { COOKIE_NAME } from "@/utils/constants";
+import { COOKIE_NAME, SERVER_NAME } from "@/utils/constants";
 
 import { GetCurrentUser } from './UserActions';
 import { GetRandom } from "@/utils/helpers";
