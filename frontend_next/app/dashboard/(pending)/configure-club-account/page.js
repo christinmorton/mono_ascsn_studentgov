@@ -5,15 +5,15 @@ import { GetCurrentStudent } from '@/actions/StudentActions'
 import { redirect } from 'next/navigation'
 
 const ConfigureClubAccount = async () => {
-    const studentExist = await GetCurrentStudent();
+    // const studentExist = await GetCurrentStudent();
     
 
-    if(studentExist) redirect('/dashboard');
+    // if(studentExist) redirect('/dashboard');
 
   return (
     <div>
         <h1>Welcome to the ASCSN Student Government App!</h1>
-        <h4>We created this app to better serve CSN's student body.</h4>
+        <h4>We created this app to better serve CSN&apos;s student body.</h4>
 
         <p>This app seeks to strengthen the voice of the students. Your experiences on campus and college matter! With this application we hope to identify ways we can improve csn.</p>
 

@@ -37,7 +37,7 @@ const StudentBodyStatsSection = () => {
             >
               <div className="flex mx-auto w-40 sm:w-auto">
                 <div className="flex items-center justify-center bg-blue-600 w-12 h-12 mr-6 rounded-full">
-                  <Image src={listUsers.icon} className="h-6 w-6" />
+                  <Image src={listUsers.icon} className="h-6 w-6" alt='icon image of a user' />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-xl text-black-600 font-bold">

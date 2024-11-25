@@ -31,7 +31,7 @@ const StudentBodyGovernmentSection = ({content}) => {
                 <h1>{content.charleston_campus_senators[0].title}</h1>
                 <div className='flex flex-row'>
                     {content.charleston_campus_senators.map((senator, index) => (
-                        <div>
+                        <div key={index}>
                             <StudentGovernmentCard key={index} member={senator} noTitle={false} />
                         </div>
                     ))}
@@ -42,7 +42,7 @@ const StudentBodyGovernmentSection = ({content}) => {
                 <h1>{content.extension_site_senators[0].title}</h1>
                 <div className='flex flex-row'>
                     {content.extension_site_senators.map((senator, index) => (
-                        <div>
+                        <div key={index}>
                             <StudentGovernmentCard key={index} member={senator} noTitle={false} />
                         </div>
                     ))}
@@ -53,7 +53,7 @@ const StudentBodyGovernmentSection = ({content}) => {
                 <h1>{content.henderson_campus_senators[0].title}</h1>
                 <div className='flex flex-row'>
                     {content.henderson_campus_senators.map((senator, index) => (
-                        <div>
+                        <div key={index}>
                             <StudentGovernmentCard key={index} member={senator} noTitle={false} />
                         </div>
                     ))}
@@ -64,7 +64,7 @@ const StudentBodyGovernmentSection = ({content}) => {
                 <h1>{content.north_las_vegas_campus_senators[0].title}</h1>
                 <div className='flex flex-row'>
                     {content.north_las_vegas_campus_senators.map((senator, index) => (
-                        <div>
+                        <div key={index}>
                             <StudentGovernmentCard key={index} member={senator} noTitle={false} />
                         </div>
                     ))}

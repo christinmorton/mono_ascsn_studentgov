@@ -23,10 +23,14 @@ const Home = async () => {
 
       <StudentBodyStatsSection />
 
-      <div className="h-[600px] w-full flex flex-row items-center justify-evenly">
+      <div className="h-[500px] w-full flex flex-row items-center justify-evenly my-24">
+        <div className="w-full h-full flex items-center bg-blue-600">
         <ASCSNContentSection content={content.mission_statement} />
+        </div>
 
+        <div className="w-full h-full flex items-center bg-yellow-400">
         <ASCSNContentSection content={content.goals} />
+        </div>
       </div>
 
       <ASCSNStudentUnionsSection content={content.studentUnions} studentUnion={studentUnion} />

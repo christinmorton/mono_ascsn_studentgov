@@ -166,7 +166,7 @@ const StudentUnionTabs = ({ content, studentUnion }) => {
     };
 
   return (
-    <div className='tabs_container'>
+    <div className='w-full tabs_container'>
         <div className="flex justify-center space-x-4 mb-4">
                 <button
                     className={`tabs ${toggleState === 1 ? 'active-tab' : ''}`}
@@ -190,7 +190,7 @@ const StudentUnionTabs = ({ content, studentUnion }) => {
 
         <div className="content-tabs bg-yellow-200 rounded-xl text-blue-600">
             <div className={` ${toggleState === 1 ? 'flex flex-col items-center content active-content' : 'invisible hidden'}`}>
-            <div className="flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
+            <div className="w-full flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
                     <div className="flex flex-col items-start justify-evenly p-6">
                         <p>{building_info.str1}</p>
                         <p>{building_info.str2}</p>
@@ -234,7 +234,7 @@ const StudentUnionTabs = ({ content, studentUnion }) => {
                 </div>
             </div>
             <div  className={` ${toggleState === 2 ? 'flex flex-col items-center content active-content' : 'invisible hidden'}`}>
-                <div className="flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
+                <div className="w-full flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
                     <div className="flex flex-col items-start justify-evenly p-6">
                         <p>{building_info.str1}</p>
                         <p>{building_info.str2}</p>
@@ -282,7 +282,7 @@ const StudentUnionTabs = ({ content, studentUnion }) => {
                 </div>
             </div>
             <div  className={` ${toggleState === 3 ? 'flex flex-col items-center content active-content' : 'invisible hidden'}`}>
-            <div className="flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
+            <div className="w-full flex flex-col items-center text-lg font-semibold highlight-border p-6 space-y-12" >
                     <div className="flex flex-col items-start justify-evenly p-6">
                         <p>{building_info.str1}</p>
                         <p>{building_info.str2}</p>
