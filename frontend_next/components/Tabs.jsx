@@ -27,19 +27,19 @@ const Tabs = ({campuses, learningCenters}) => {
             </div>
 
         <div className="content-tabs">
-            <div className={`flex flex-col items-center content ${toggleState === 1 ? 'active-content' : 'invisible'}`}>
+            <div className={`${toggleState === 1 ? 'h-[500px] flex flex-row items-center gap-6' : 'invisible hidden'}`}>
                 {campuses.map((item, index) => (
-                    <div className="flex flex-col items-center text-lg font-semibold" key={index}>
+                    <div className="flex flex-col items-center text-lg font-semibold p-6" key={index}>
                         <h4>{item.Name}</h4>
-                        <p>{item.address.PrimaryStreet}, {item.address.city}, {item.address.state} {item.address.zipcode}</p>
+                        <p className='text-sm'>{item.address.PrimaryStreet}, {item.address.city}, {item.address.state} {item.address.zipcode}</p>
                         <p>{item.address.phone}</p>
                     </div>
                 ))}
             </div>
 
-            <div  className={`flex flex-col items-center content ${toggleState === 2 ? 'active-content' : 'invisible'}`}>
+            <div  className={`${toggleState === 2 ? 'h-[500px] w-full grid grid-cols-4 justify-between  p-6 gap-6' : 'invisible hidden'}`}>
             {learningCenters.map((item, index) => (
-                    <div className="flex flex-col items-center text-lg font-semibold" key={index}>
+                    <div className="flex flex-col items-center text-lg font-semibold p-6" key={index}>
                         <h4>{item.Name}</h4>
                         <p>{item.address.PrimaryStreet}, {item.address.city}, {item.address.state} {item.address.zipcode}</p>
                         <p>{item.address.phone}</p>

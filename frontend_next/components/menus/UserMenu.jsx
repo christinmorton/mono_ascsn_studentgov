@@ -16,7 +16,7 @@ const UserMenu = async () => {
   return (
     <div>
         {user && (
-          <div>
+          <div className=''>
             {/* {student && <div>*/}
                 <Link href={'/dashboard'}>dashboard</Link>
                 <Link href={'/surveys'}>surveys</Link>

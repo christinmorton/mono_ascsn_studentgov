@@ -34,7 +34,7 @@ body {
 }
 
 .active-content {
-  @apply block;
+  /* @apply block; */
 }
 
 

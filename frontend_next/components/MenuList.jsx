@@ -13,7 +13,7 @@ const MenuList = ({menuList, search}) => {
       {menuList.MenuItems.map((item, index) => 
         (<MenuItem key={index} menuitem={item} index={index} specialBackground={index >= totalItems - 2} />)
       )}
-      {search && <div className='h-[80px] w-[80px] flex flex-col items-center justify-center rounded-full bg-[#ffd200] '><FaMagnifyingGlass size={56} fill='#004890' /></div>}
+      {search && <div className='h-[80px] w-[80px] flex flex-col items-center justify-center rounded-full bg-[#ffd200] p-4'><FaMagnifyingGlass size={56} fill='#004890' /></div>}
     </nav>
   )
 }

@@ -15,13 +15,15 @@ const SurveyPageBySlug = async (props) => {
     const questions = await GetFiveRandomQuestions();
     console.log(questions)
   return (
-    <main className='w-full h-screen flex flex-col items-center justify-start'>
-        <div>
-            <h1>{survey.Title}</h1>
-            <h2>{survey.Name}</h2>
-            <hr></hr>
-            <p>{survey.Description}</p>
-            <hr></hr>
+    <main className='max-w-screen-xl h-full py-24 mx-auto'>
+        <div className='flex flex-row items-start justify-between gap-4 p-6'>
+            <div className='w-[40%] flex flex-col items-start justify-start bg-yellow-300 p-8 rounded-l-lg'>
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-blue-600 leading-normal py-4">{survey.Title}</h1>
+              {/* <h2>{survey.Name}</h2> */}
+              <hr></hr>
+              <p className='text-blue-600'>{survey.Description}</p>
+              <hr></hr>
+            </div>
 
             {/* <form action={createStudentResponse}>
               <input type='hidden' name='Name' value={survey.Name} />
@@ -30,12 +32,14 @@ const SurveyPageBySlug = async (props) => {
 
               <button type='submit'>Take Survey</button>
             </form> */}
+
+            <div className='w-[60%] h-[700px] flex flex-col items-start'>
+              {questions.map((question, index) => (
+                  <SingleQuestion key={index} question={question} student_id={user.documentId} survey_id={survey.documentId} />
+              ))}
+            </div>
             
         </div>
-
-        {questions.map((question, index) => (
-            <SingleQuestion key={index} question={question} student_id={user.documentId} survey_id={survey.documentId} />
-        ))}
     </main>
   )
 }

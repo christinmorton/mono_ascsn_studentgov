@@ -7,10 +7,10 @@ const SingleQuestion = ({question, survey_id, student_id, response_id=null}) => 
     const [formState, action] = useActionState(AnswerSingleQuestion, { message: ''})
     // console.log(question)
   return (
-    <form action={action}>
+    <form action={action} className="w-full h-full flex flex-col items-start justify-evenly p-4 space-y-4">
         <div>
           <label htmlFor={'single-question'}>{question.Question}</label>
-          <input type='text' name={'single-question'} placeholder={question.Type} />
+          <input type='text' name={'single-question'} placeholder={question.Type} className="w-full h-full" />
       </div>
       <div>
         <input type="hidden" name="survey_id" value={survey_id} />

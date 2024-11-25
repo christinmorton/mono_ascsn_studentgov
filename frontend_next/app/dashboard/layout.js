@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 const Dashboard = ({children, details, responses, surveys}) => {
     const path = usePathname();
   return (
-    <div>
+    <main  className='max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto'>
         {path === '/dashboard' ? (
             <div className='flex flex-row flex-start justify-evenly p-4'>
                 <div className='p-4'>{details}</div>
@@ -14,7 +14,7 @@ const Dashboard = ({children, details, responses, surveys}) => {
         ) : (
             <div>{children}</div>
         )}
-    </div>
+    </main>
   )
 }
 

@@ -19,7 +19,7 @@ const Footer = async () => {
           className="w-full flex flex-col items-center justify-between"
         >
            <div className='w-full flex flex-row'>
-                <div className='w-[30%] bg-[#f9f1e2]'>
+                <div className='w-[30%] bg-[#f9f1e2] p-4'>
                 <Logo />
                 <LeftFooter />
                 </div>

@@ -34,7 +34,7 @@ const Header = async () => {
             id="site-header"
             className="w-full flex flex-col"
         >
-            <div className='flex flex-row items-center justify-between'>
+            <div className='flex flex-row items-center justify-between p-4'>
                 <Logo />
                 <TopHeader />
             </div>
